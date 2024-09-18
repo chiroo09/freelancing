@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: maxcleaner
+  datasource:
+    url: jdbc:mysql://localhost:3306/laundry_service
+    username: root
+    password: Maxcleaners@123
+    hikari:
+      maximum-pool-size: 10
+  security:
+    secret-key: dkod7U2WRQNM8bd26kzmt4TGJOd2ko0c0oeyVNkyOeQ=
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  geocode:
+    baseurl: https://geocoding.geo.census.gov/geocoder/locations/onelineaddress
+  stores:
+    - name: powell store
+      latitude: 40.15535944723816
+      longitude: -83.09396795468398
+  miles: 10
+  admin:
+    phone: "1234567890"
+
+logging:
+  file:
+    name: logs/app.log
+    max-size: 10MB
+    max-history: 30
+  level:
+    root: INFO
+    org.springframework: INFO
+    com.laundryservice.maxcleaners: INFO
